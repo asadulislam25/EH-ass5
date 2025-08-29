@@ -1,344 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bd Emergency Hotlines</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css">
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bd Emergency Hotlines</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-    </style>
+  </style>
 </head>
 <body>
-    <!-- header section start -->
-    <header>
-        <div class="max-h-[60px] sm:max-h-[100px] flex justify-between items-center p-4">
-            <div class="flex justify-center items-center">
-                <img class="h-[30px] sm:h-[50px]" src="assets/logo.png" alt="main logo">
-                <h1 class="ml-2 text-[#006747] text-xs sm:text-xl font-bold">Emergency <br> Service</h1>
-            </div>
-            <div class="flex justify-between items-cente gap-[1px]  sm:gap-[20px]">
-                <div class="flex justify-center items-center gap-[1px] sm:gap-[10px] p-3 sm:w-25 h-12 rounded-4xl bg-white sm:bg-[#41ff6b1a]">
-                    <p id="heart-count">0</p>
-                    <img class="h-[18px] sm:h-[30px]" src="assets/heart.png" alt="Heart Image">
-                </div>
-                <div class="flex justify-center items-center gap-[2px] sm:gap-[10px] p-3 sm:p-3 w-15 sm:w-25 h-12 rounded-4xl bg-white sm:bg-[#41ff6b1a]">
-                    <p>100</p>
-                    <img class="h-[18px] sm:h-[24px]" src="assets/coin.png" alt="coin">
-                </div>
-                <div class="flex justify-center items-center gap-[5px] sm:gap-[10px] p-2 w-18 mt-2 sm:mt-0 sm:w-25 h-8 sm:h-12 text-white rounded-4xl bg-[#00A63E]">
-                    <p>2</p>
-                    <p>Copy</p>
-                </div>
-            </div>
+  <!-- header section start -->
+  <header>
+    <div class="max-h-[60px] sm:max-h-[100px] flex justify-between items-center p-4">
+      <div class="flex justify-center items-center">
+        <img class="h-[30px] sm:h-[50px]" src="assets/logo.png" alt="main logo">
+        <h1 class="ml-2 text-[#006747] text-xs sm:text-xl font-bold">Emergency <br> Service</h1>
+      </div>
+      <div class="flex justify-between items-cente gap-[1px]  sm:gap-[20px]">
+        <!-- heart counter -->
+        <div class="flex justify-center items-center gap-[1px] sm:gap-[10px] p-3 sm:w-25 h-12 rounded-4xl bg-white sm:bg-[#41ff6b1a]">
+          <p id="heart-count">0</p>
+          <img class="h-[18px] sm:h-[30px]" src="assets/heart.png" alt="Heart Image">
         </div>
-    </header>
-    <!-- header section end -->
+        <!-- coin counter -->
+        <div class="flex justify-center items-center gap-[2px] sm:gap-[10px] p-3 sm:p-3 w-15 sm:w-25 h-12 rounded-4xl bg-white sm:bg-[#41ff6b1a]">
+          <p id="coin_count">100</p>
+          <img class="h-[18px] sm:h-[24px]" src="assets/coin.png" alt="coin">
+        </div>
+        <!-- copy counter -->
+        <div id="copy-counter-box" class="flex justify-center items-center gap-[5px] sm:gap-[10px] p-2 w-18 mt-2 sm:mt-0 sm:w-25 h-8 sm:h-12 text-white rounded-4xl bg-[#00A63E]">
+          <p id="copy-count">0</p>
+          <p>Copy</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header section end -->
 
-    <main class="bg-green-50">
-        <!-- banner section start -->
-        <section>
-            <div class="p-4 bg-gradient-to-r from-green-900 via-emerald-800 to-emerald-900 max-h-[250px] flex flex-col items-center">
-                <img class="h-[92px]" src="assets/logo-dark.png" alt="banner logo">
-                <h1 class="text-white font-[Hind_Madurai] font-bold text-xl sm:text-[40px]">Emergency Service Directory</h1>
-                <p class="text-white font-[Hind_Madurai] font-light sm:font-semibold text-[14px] sm:text[20px]">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+  <main class="bg-green-50">
+    <!-- banner section start -->
+    <section>
+      <div class="p-4 bg-gradient-to-r from-green-900 via-emerald-800 to-emerald-900 max-h-[250px] flex flex-col items-center">
+        <img class="h-[92px]" src="assets/logo-dark.png" alt="banner logo">
+        <h1 class="text-white font-[Hind_Madurai] font-bold text-xl sm:text-[40px]">Emergency Service Directory</h1>
+        <p class="text-white font-[Hind_Madurai] font-light sm:font-semibold text-[14px] sm:text[20px]">Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of Bangladesh</p>
+      </div>
+    </section>
+    <!-- banner section end -->
+
+    <!-- cards section -->
+    <section id="get_all_elements">
+      <div class="flex flex-col sm:grid grid-cols-4 gap-3 p-[40px]">
+
+        <!-- card 1 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
             </div>
-        </section>
-        <!-- banner section end -->
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 1 end -->
 
+        <!-- card 2 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
+            </div>
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 2 end -->
+
+
+        <!-- card 3 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
+            </div>
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 3 end -->
+
+
+        <!-- card 4 start - Call History -->
+        <div class="call-history rounded-2xl bg-white p-4 shadow-xs row-span-3"> 
+          <div class="flex justify-between items-center">
+            <div class="flex items-center font-[Roboto] text-[#111111]">
+              <i class="fa-regular fa-clock"></i>
+              <p class="ml-2">Call History</p>
+            </div>
+            <div id="clear_btn" class="font-[inter] text-center text-white bg-[#00A63E] text-[14px] rounded-4xl p-2 w-[80px] cursor-pointer">
+              <p>Clear</p>
+            </div>
+          </div>
+          <div id="call_history" class="flex-col justify-between items-center bg-[#FAFAFA] mt-4 rounded-2xl p-2">
+          </div>
+        </div>
+        <!-- card 4 end - call history -->
+
+
+        <!-- card 5 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
+            </div>
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 5 end -->
+        
+        <!-- card 6 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
+            </div>
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 6 end -->
+        
+        <!-- card 7 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
+            </div>
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 7 end -->
+        
+        <!-- card 8 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
+            </div>
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 8 end -->
+        
+        <!-- card 9 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
+            </div>
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 9 end -->
+        
+        <!-- card 10 start -->
+        <div class="card rounded-2xl bg-white p-4 shadow-xs">
+          <div class="flex justify-between items-center">
+            <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
+              <img class="h-[32px]" src="assets/fire-service.png" alt="">
+            </div>
+            <i class="heart fa-regular fa-heart heart-btn"></i>
+          </div>
+          <div>
+            <h1 class="hotline_title card-title mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
+            <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
+          </div>
+          <div>
+            <h1 class="hotline_number number font-[Roboto] font-bold text-[24px] text-black mt-4">102</h1>
+            <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
+          </div>
+          <div class="flex justify-around gap-2 mt-4">
+            <div class="copyBtn flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
+              <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
+              <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
+            </div>
+            <div class="callBtn flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
+              <i class="fa-solid fa-phone"></i>
+              <p class="text-white font-[Roboto] text-[12px]">Call</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 10 end -->
         
 
-        <!-- cards section -->
-
-        <section>
-            <div class="flex flex-col sm:grid grid-cols-4 gap-3 p-[40px]">
-
-                <!-- card 1 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/fire-service.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >102</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 2 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/ambulance.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Health Care Support</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Health</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >16263</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 3 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/brac.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Brac Services</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Iconomic</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >16223</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card  4 start -->
-
-                <!-- row span 4 -->
-                <div class="call-history rounded-2xl bg-white p-4 shadow-xs row-span-3"> 
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center font-[Roboto] text-[#111111]">
-                            <i class="fa-regular fa-clock"></i>
-                            <p class="ml-2">Call History</p>
-                        </div>
-                        <div class=" font-[inter] text-center text-white bg-[#00A63E] text-[14px] rounded-4xl p-2 w-[80px]">
-                            <p>Clear</p>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between items-center bg-[#FAFAFA] mt-4 rounded-2xl p-2">
-                        <div>
-                            <p class="font-[inter] font-semibold text-[14px] text-[#111111]">Fire Service Number</p>
-                            <p class="font-[Hind_Madurai] font-normal text-[12px] text-[#5C5C5C]">999</p>
-                        </div>
-                        <div>
-                            <p class="font-[Hind_Madurai] font-normal text-[12px] text-[#111111]">11:36:58 AM</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 5 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/emergency.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Emergency Number</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Emergency</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >999</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 6 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/fire-service.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >102</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 7 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/nid.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">National Identity Card</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Nid</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >105</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">National</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 8 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/ambulance.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >999</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 9 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/ambulance.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >999</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- card 10 start -->
-
-                <div class="rounded-2xl bg-white p-4 shadow-xs">
-                    <div class="flex justify-between items-center">
-                        <div class="h-[60px] bg-[#FFE3E2] p-[14px] rounded-2xl">
-                            <img class="h-[32px]" src="assets/ambulance.png" alt="">
-                        </div>
-                        <i class="heart fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <h1 class="mt-2 text-black font-[Hind_Madurai] font-bold text-[18px]">Fire Service Number</h1>
-                        <p class="font-[Roboto] font-medium text-[14px] text-[#5C5C5C]">Fire Service</p>
-                    </div>
-                    <div>
-                        <h1 class="font-[Roboto] font-bold text-[24px] text-black mt-4" >999</h1>
-                        <p class="text-center font-[Hind_Madurai] font-medium text-[14px] bg-[#F2F2F2] rounded-2xl text-[#5C5C5C] w-[60px] p-2">Fire</p>
-                    </div>
-                    <div class="flex justify-around gap-2 mt-4">
-                        <div class="flex justify-center items-center rounded-xl w-50 h-7 p-4 gap-1 border-1 border-[#D4D6D5]">
-                            <i class="fa-solid fa-copy text-[#5C5C5C]"></i>
-                            <p class="text-[#5C5C5C] font-[Roboto] text-[12px]">Copy</p>
-                        </div>
-                        <div class="flex justify-center items-center text-white rounded-xl w-50 h-7 p-4 gap-1 bg-[#00A63E]">
-                            <i class="fa-solid fa-phone"></i>
-                            <p class="text-white font-[Roboto] text-[12px]">Call</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card end -->  
-            </div>
-        </section>
-    </main>
-    <script src="javascript/script.js"></script>
+      </div>
+    </section>
+  </main>
+  <script src="javascript/script.js"></script>
 </body>
 </html>
